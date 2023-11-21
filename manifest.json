@@ -1,0 +1,53 @@
+{
+   "background": {
+      "persistent": true,
+      "scripts": [ "background.js" ]
+   },
+   "browser_action": {
+      "default_icon": {
+         "128": "icons/icon128.png",
+         "16": "icons/icon16.png",
+         "48": "icons/icon48.png"
+      },
+      "default_popup": "index.html",
+      "default_title": "UnDistracted"
+   },
+   "content_scripts": [ {
+      "js": [ "undistracted-twitter.js" ],
+      "matches": [ "*://*.twitter.com/*" ],
+      "run_at": "document_start"
+   }, {
+      "js": [ "undistracted-youtube.js" ],
+      "matches": [ "*://*.youtube.com/*" ],
+      "run_at": "document_start"
+   }, {
+      "js": [ "undistracted-facebook.js" ],
+      "matches": [ "*://*.facebook.com/*" ],
+      "run_at": "document_start"
+   }, {
+      "js": [ "undistracted-reddit.js" ],
+      "matches": [ "*://*.reddit.com/*" ],
+      "run_at": "document_start"
+   }, {
+      "js": [ "undistracted-netflix.js" ],
+      "matches": [ "*://*.netflix.com/*" ],
+      "run_at": "document_start"
+   }, {
+      "js": [ "undistracted-linkedin.js" ],
+      "matches": [ "*://*.linkedin.com/*" ],
+      "run_at": "document_start"
+   } ],
+   "content_security_policy": "script-src 'self' https://www.google-analytics.com; object-src 'self'",
+   "description": "Rise above the time-sinks",
+   "icons": {
+      "128": "icons/icon128.png",
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAhJiJKzU881XnS1Wp0szlk2j/kgplJ+iJM0h2/wlB8UKQM1bhgi8op5+KQjQWiRZfMHQkkvliNPKdEF8quS4IuApx1n3VvDZ5SYNLAYzZZR9I8nhkS/8wx2cxmG2LQNamvY9zxQXZYeh0PqhAJXViVAwKL5XPWdKk9lzOU02/5e1mVth5PMuTLoZFQWvXhlMGjm57uAQV7Qx97DQ1RqLa6v9CbqrylHUHvwlAW62GaQ4ea0B7eV1BwcnFrSdXCmLO/FvdzTjqCH8MV9rNROJZxtug4jJUVy1o1lYKVJxzpbCGHAfyR/xqFk3myoS9Dw0SRCWspo5Q3h6duN98SzeiowIDAQAB",
+   "manifest_version": 2,
+   "name": "UnDistracted - Hide Facebook, YouTube Feeds",
+   "permissions": [ "storage", "webNavigation" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.9.1"
+}
